@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button android:id="@+id/connect" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Conectar ao Leitor"/>
+        <Button android:id="@+id/scan_start" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Iniciar Leitura Contínua"/>
+        <Button android:id="@+id/scan_stop" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Parar Leitura"/>
+        <Button android:id="@+id/read_once" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Leitura Única"/>
+        <Button android:id="@+id/info" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Informações do Leitor"/>
+        <Button android:id="@+id/get_power" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Obter Potência"/>
+        <Button android:id="@+id/set_power" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ajustar Potência para 30"/>
+        <Button android:id="@+id/read_mem" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ler Memória EPC"/>
+        <Button android:id="@+id/write_mem" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Escrever USER=ABCD"/>
+        <Button android:id="@+id/lock_tag" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bloquear Tag"/>
+        <Button android:id="@+id/kill_tag" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Destruir Tag"/>
+
+
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOG:\n"
+            android:paddingTop="16dp"/>
+    </LinearLayout>
+</ScrollView>

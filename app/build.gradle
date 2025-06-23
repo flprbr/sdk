@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.stela.sdkrfidtest'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.stela.sdkrfidtest"
         minSdk 23
-        targetSdk 34
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 
@@ -30,6 +30,8 @@ android {
 }
 
 dependencies {
+    implementation 'org.greenrobot:eventbus:3.3.1'
+
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
