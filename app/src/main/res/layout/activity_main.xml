@@ -9,24 +9,159 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <Button android:id="@+id/connect" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Conectar ao Leitor"/>
-        <Button android:id="@+id/scan_start" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Iniciar Leitura Contínua"/>
-        <Button android:id="@+id/scan_stop" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Parar Leitura"/>
-        <Button android:id="@+id/read_once" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Leitura Única"/>
-        <Button android:id="@+id/info" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Informações do Leitor"/>
-        <Button android:id="@+id/get_power" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Obter Potência"/>
-        <Button android:id="@+id/set_power" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ajustar Potência para 30"/>
-        <Button android:id="@+id/read_mem" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ler Memória EPC"/>
-        <Button android:id="@+id/write_mem" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Escrever USER=ABCD"/>
-        <Button android:id="@+id/lock_tag" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bloquear Tag"/>
-        <Button android:id="@+id/kill_tag" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Destruir Tag"/>
-
-
-        <TextView
-            android:id="@+id/log"
+        <!-- Seção: Conexão -->
+        <Button
+            android:id="@+id/connect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LOG:\n"
-            android:paddingTop="16dp"/>
+            android:text="Conectar ao Leitor" />
+
+        <!-- Seção: Leitura -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leitura de Tags"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/scan_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Iniciar Leitura Contínua" />
+
+        <Button
+            android:id="@+id/scan_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parar Leitura" />
+
+        <Button
+            android:id="@+id/read_once"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Leitura Única" />
+
+        <Button
+            android:id="@+id/btnGetBuzzer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Testar Buzzer" />
+
+
+        <!-- Seção: Informações e potência -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informações do Leitor"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mostrar Informações" />
+
+        <Button
+            android:id="@+id/get_power"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Obter Potência Atual" />
+
+        <!-- Seção: Ajuste de Potência -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajuste de Potência"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spPower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnApplyPower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aplicar Potência Selecionada" />
+
+        <Button
+            android:id="@+id/btnRefreshPower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atualizar Potência Atual" />
+
+        <TextView
+            android:id="@+id/tvPowerCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Potência atual: --"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#333333" />
+
+        <!-- Seção: Memória da Tag -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Operações de Memória"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/read_mem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ler Memória EPC" />
+
+        <Button
+            android:id="@+id/write_mem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escrever USER = ABCD" />
+
+        <Button
+            android:id="@+id/lock_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bloquear Tag" />
+
+        <Button
+            android:id="@+id/kill_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Destruir Tag" />
+
+        <!-- Seção: Log -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOG"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp" />
+
+        <Button
+            android:id="@+id/btnClearLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Limpar Log"
+            android:layout_marginBottom="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerLog"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#EEEEEE"
+            android:padding="8dp"
+            android:scrollbars="vertical" />
+
     </LinearLayout>
 </ScrollView>
